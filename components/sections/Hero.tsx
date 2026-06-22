@@ -36,7 +36,7 @@ export default function Hero() {
       </div>
 
       {/* Contenido: texto a un lado, animación 3D del otro */}
-      <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-10 lg:grid-cols-2 lg:gap-10">
+      <div className="pointer-events-none relative z-10 mx-auto grid w-full max-w-7xl items-center gap-10 lg:grid-cols-2 lg:gap-10">
         {/* Columna de texto (pointer-events-none deja que el puntero llegue a los
             cubos del fondo; los botones se rehabilitan abajo) */}
         <div className="pointer-events-none order-2 lg:order-1">

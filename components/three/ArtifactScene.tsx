@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useRef } from "react";
-import { useFrame, useThree } from "@react-three/fiber";
+import { useFrame } from "@react-three/fiber";
 import { Float } from "@react-three/drei";
 import * as THREE from "three";
 
@@ -118,7 +118,9 @@ function OrbitRing({ reduced }: { reduced: boolean }) {
   );
 }
 
-/** Contenido de la escena: parallax con el puntero + artefacto + anillo. */
+/** Contenido de la escena: artefacto + anillo. SIN interacción con el puntero
+   (solo gira y flota como ya lo hacía). La interactividad del cursor queda
+   reservada para el fondo de cubos del hero. */
 export default function ArtifactScene({
   reduced,
   small,
@@ -126,27 +128,8 @@ export default function ArtifactScene({
   reduced: boolean;
   small: boolean;
 }) {
-  const groupRef = useRef<THREE.Group>(null);
-  const { pointer } = useThree();
-
-  useFrame(() => {
-    if (!groupRef.current) return;
-    const targetY = reduced ? 0 : pointer.x * 0.35;
-    const targetX = reduced ? 0 : -pointer.y * 0.25;
-    groupRef.current.rotation.y = THREE.MathUtils.lerp(
-      groupRef.current.rotation.y,
-      targetY,
-      0.04
-    );
-    groupRef.current.rotation.x = THREE.MathUtils.lerp(
-      groupRef.current.rotation.x,
-      targetX,
-      0.04
-    );
-  });
-
   return (
-    <group ref={groupRef}>
+    <group>
       <Float speed={reduced ? 0 : 1.4} rotationIntensity={0.15} floatIntensity={0.5}>
         <Artifact reduced={reduced} small={small} />
         <OrbitRing reduced={reduced} />
