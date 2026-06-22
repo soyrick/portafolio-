@@ -1,0 +1,215 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===========================================================================
+   TOKENS + BASE
+   Estética retro-tecnológica: terminal oscura, fósforo, ámbar, scanlines.
+   =========================================================================== */
+:root {
+  --bg: #0a0a0b;
+  --bone: #f1efe6;
+  --amber: #ffc23d;
+  --phosphor: #7dffb0;
+  --signal: #6fd2ff;
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  /* El smooth-scroll real lo maneja Lenis; dejamos auto para no duplicar. */
+  scroll-behavior: auto;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--bone);
+  font-family: var(--font-space), ui-sans-serif, system-ui, sans-serif;
+  overflow-x: hidden;
+  /* Atmósfera de fondo: halos de color muy sutiles que dan profundidad. */
+  background-image:
+    radial-gradient(60% 50% at 15% 0%, rgba(255, 194, 61, 0.08), transparent 60%),
+    radial-gradient(50% 45% at 85% 20%, rgba(111, 210, 255, 0.06), transparent 60%),
+    radial-gradient(55% 50% at 50% 100%, rgba(125, 255, 176, 0.05), transparent 60%);
+  background-attachment: fixed;
+}
+
+::selection {
+  background: var(--amber);
+  color: #0a0a0b;
+}
+
+/* Scrollbar discreta */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0b;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a33;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a44;
+}
+
+/* ===========================================================================
+   UTILIDADES PROPIAS
+   =========================================================================== */
+@layer utilities {
+  /* Líneas de barrido tipo monitor CRT */
+  .scanlines::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.035) 0px,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+    z-index: 30;
+    mix-blend-mode: overlay;
+  }
+
+  /* Grano/ruido sutil (data-uri SVG, sin pedir red) */
+  .grain::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 40;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Grilla técnica de fondo */
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .glow-amber {
+    text-shadow: 0 0 24px rgba(255, 194, 61, 0.35);
+  }
+
+  .ring-hairline {
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  }
+
+  /* Outline de texto (para los pesos light del lettering) */
+  .text-outline {
+    -webkit-text-stroke: 1px rgba(241, 239, 230, 0.55);
+    color: transparent;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* ===========================================================================
+   ACCESIBILIDAD: respeta a quien pidió menos movimiento.
+   =========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===========================================================================
+   CURSOR PERSONALIZADO (TargetCursor — React Bits + GSAP)
+   El componente setea los colores inline; aquí va el layout/posición.
+   =========================================================================== */
+.target-cursor-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+}
+
+.target-cursor-dot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 4px;
+  height: 4px;
+  background: #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+.target-cursor-corner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  border: 3px solid #fff;
+  will-change: transform;
+}
+
+.corner-tl {
+  transform: translate(-150%, -150%);
+  border-right: none;
+  border-bottom: none;
+}
+
+.corner-tr {
+  transform: translate(50%, -150%);
+  border-left: none;
+  border-bottom: none;
+}
+
+.corner-br {
+  transform: translate(50%, 50%);
+  border-left: none;
+  border-top: none;
+}
+
+.corner-bl {
+  transform: translate(-150%, 50%);
+  border-right: none;
+  border-top: none;
+}
+
+/* Con el cursor custom activo (solo en dispositivos con puntero fino: desktop),
+   ocultamos el cursor NATIVO en todo. Así no aparece la "manito" (cursor:
+   pointer) sobre botones/enlaces — solo se ve la animación del TargetCursor.
+   En touch no aplica y el componente se desactiva, dejando el cursor normal. */
+@media (hover: hover) and (pointer: fine) {
+  *,
+  *::before,
+  *::after {
+    cursor: none !important;
+  }
+}
+
