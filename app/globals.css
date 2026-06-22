@@ -213,3 +213,78 @@ body {
   }
 }
 
+/* ===========================================================================
+   CUBES (React Bits) — grilla 3D interactiva usada como fondo del hero.
+   Los colores (borde/cara) llegan por CSS vars inline desde el componente.
+   =========================================================================== */
+.default-animation {
+  position: relative;
+  width: 50%;
+  aspect-ratio: 1 / 1;
+  height: auto;
+}
+
+.default-animation--scene {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  column-gap: var(--col-gap, 5%);
+  row-gap: var(--row-gap, 5%);
+  perspective: 99999999px;
+  grid-auto-rows: 1fr;
+}
+
+.cube {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  transform-style: preserve-3d;
+}
+
+.cube::before {
+  content: "";
+  position: absolute;
+  top: -36px;
+  right: -36px;
+  bottom: -36px;
+  left: -36px;
+}
+
+.default-animation .cube-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cube-face-bg, #120f17);
+  border: var(--cube-face-border, 1px solid #fff);
+  box-shadow: var(--cube-face-shadow, none);
+  opacity: 1;
+}
+
+.default-animation .cube-face--top {
+  transform: translateY(-50%) rotateX(90deg);
+}
+.default-animation .cube-face--bottom {
+  transform: translateY(50%) rotateX(-90deg);
+}
+.default-animation .cube-face--left {
+  transform: translateX(-50%) rotateY(-90deg);
+}
+.default-animation .cube-face--right {
+  transform: translateX(50%) rotateY(90deg);
+}
+.default-animation .cube-face--back,
+.default-animation .cube-face--front {
+  transform: rotateY(-90deg) translateX(50%) rotateY(90deg);
+}
+
+/* Variante fondo del hero: la grilla ocupa todo el alto y ancho disponibles. */
+.hero-cubes-layer .default-animation {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+}
+

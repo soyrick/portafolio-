@@ -1,4 +1,5 @@
 import HeroScene from "@/components/three/HeroScene";
+import Cubes from "@/components/three/Cubes";
 import { SITE } from "@/data/site";
 
 export default function Hero() {
@@ -7,8 +8,22 @@ export default function Hero() {
       id="hero"
       className="scanlines relative flex min-h-[100svh] items-center overflow-hidden px-5 pt-28 pb-20 sm:px-8"
     >
-      {/* Grilla técnica de fondo */}
-      <div className="grid-bg pointer-events-none absolute inset-0 opacity-40" />
+      {/* Fondo del hero: grilla de cubos 3D interactiva */}
+      <div className="hero-cubes-layer absolute inset-0 z-0 opacity-80" aria-hidden>
+        <Cubes
+          gridSize={10}
+          maxAngle={45}
+          radius={3}
+          faceColor="#0d0d12"
+          borderStyle="1px solid rgba(255, 194, 61, 0.18)"
+          rippleColor="#7dffb0"
+          rippleSpeed={1.6}
+          autoAnimate
+          rippleOnClick
+        />
+      </div>
+      {/* Velo para la legibilidad del texto (no bloquea el puntero) */}
+      <div className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-r from-ink via-ink/40 to-transparent" />
 
       {/* HUD: esquinas tipo interfaz (solo desktop) */}
       <div className="pointer-events-none absolute left-5 top-24 z-10 hidden font-mono text-[11px] uppercase tracking-[0.25em] text-muted lg:block">
@@ -22,8 +37,9 @@ export default function Hero() {
 
       {/* Contenido: texto a un lado, animación 3D del otro */}
       <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-10 lg:grid-cols-2 lg:gap-10">
-        {/* Columna de texto */}
-        <div className="order-2 lg:order-1">
+        {/* Columna de texto (pointer-events-none deja que el puntero llegue a los
+            cubos del fondo; los botones se rehabilitan abajo) */}
+        <div className="pointer-events-none order-2 lg:order-1">
           <h1 className="text-balance text-[clamp(2.4rem,6.2vw,5rem)] font-light leading-[0.95] tracking-tightest">
             <span className="block font-semibold text-bone">{SITE.hero.lines[0]}</span>
             <span className="block text-outline">{SITE.hero.lines[1]}</span>
@@ -36,7 +52,7 @@ export default function Hero() {
             {SITE.hero.intro}
           </p>
 
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <div className="pointer-events-auto mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
             <a
               href={SITE.hero.ctaPrimary.href}
               className="cursor-target group inline-flex items-center justify-center gap-2 rounded-full bg-amber px-7 py-3.5 font-mono text-xs font-bold uppercase tracking-widest text-ink transition-transform hover:scale-[1.03]"
