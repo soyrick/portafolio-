@@ -99,3 +99,4 @@ public/         capturas de los proyectos
 
 - **LinkedIn:** [Ricardo García](https://www.linkedin.com/in/ricardo-garcia-62a257367)
 - **Email:** ricardoenriquegr27@gmail.com
+- **Number:** +58 412 1097114
