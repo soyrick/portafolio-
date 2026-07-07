@@ -18,6 +18,7 @@ export interface Project {
   repoUrl: string; // "" => sin botón
   demoUrl: string; // "" => sin botón
   status: ProjectStatus;
+  privateCode?: boolean; // true => muestra la nota de código privado por confidencialidad
 }
 
 export const PROJECTS: Project[] = [
@@ -33,6 +34,7 @@ export const PROJECTS: Project[] = [
     repoUrl: "",
     demoUrl: "",
     status: "En desarrollo",
+    privateCode: true,
   },
   {
     id: "landing",
@@ -46,6 +48,7 @@ export const PROJECTS: Project[] = [
     repoUrl: "",
     demoUrl: "https://www.nobregaconsultores.com/",
     status: "Terminado",
+    privateCode: true,
   },
   {
     id: "ryplay",

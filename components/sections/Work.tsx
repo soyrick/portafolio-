@@ -80,8 +80,8 @@ export default function Work() {
                     </div>
                   </div>
 
-                  {(project.repoUrl || project.demoUrl) && (
-                    <div className="mt-7 flex flex-wrap gap-3">
+                  {(project.repoUrl || project.demoUrl || project.privateCode) && (
+                    <div className="mt-7 flex flex-wrap items-center gap-3">
                       {project.demoUrl && (
                         <a
                           href={project.demoUrl}
@@ -101,6 +101,11 @@ export default function Work() {
                         >
                           Ver repo
                         </a>
+                      )}
+                      {project.privateCode && (
+                        <p className="font-mono text-[11px] uppercase tracking-widest text-muted">
+                          [ Código privado — confidencialidad del cliente ]
+                        </p>
                       )}
                     </div>
                   )}

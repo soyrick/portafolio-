@@ -33,6 +33,10 @@ código son propios.
 | **Nobrega Consultores** | Sitio web + panel de administración para un bufete de abogados (B2B) | PHP · MySQL · Apache |
 | **Ryplay** | Catálogo de cuentas de streaming con panel de administración (B2C) | Next.js · React · Supabase · Resend |
 
+> 🔒 El código de **BahiaR** y **Nobrega Consultores** es privado por
+> confidencialidad de los clientes. En el portfolio se muestran capturas,
+> descripción y stack de cada uno; Nobrega Consultores cuenta con demo en vivo.
+
 ## Características
 
 - **Hero 3D interactivo** — grilla de cubos que responde al cursor y artefacto
