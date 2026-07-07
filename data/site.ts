@@ -42,7 +42,7 @@ export const SITE = {
     intro:
       " ",
     ctaPrimary: { label: "Ver proyectos", href: "#work" },
-    ctaSecondary: { label: "Contactarme", href: "#contact" },
+    ctaSecondary: { label: "Contactame", href: "#contact" },
     scrollHint: "Scrolleá para explorar",
   },
 
