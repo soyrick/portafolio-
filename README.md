@@ -1,49 +1,97 @@
+<div align="center">
+
 # Ricardo García — Portfolio interactivo
 
-Portfolio one-page con estética retro-tecnológica, escena 3D con shader propio,
-scroll suave y animaciones. Stack: **Next.js + TypeScript + Tailwind + Three.js
-(React Three Fiber) + Framer Motion + Lenis**.
+**Full Stack Jr Developer · AI Builder**
 
-> Inspirado en la estructura/estética de sitios de estudio digital tipo shader.se,
-> pero con contenido, diseño y código 100% propios. **Sin loader de entrada.**
+Portfolio one-page con estética retro-tecnológica: escenas 3D propias, fondo de
+fluido que reacciona al cursor y scroll cinematográfico.
+Diseño y código 100% propios — sin plantillas.
 
-## Requisitos
-- Node.js 18.18+ (recomendado 20+)
-- npm
+![Next.js](https://img.shields.io/badge/Next.js_14-000000?logo=nextdotjs&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/React_18-61DAFB?logo=react&logoColor=black)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?logo=tailwindcss&logoColor=white)
+![Three.js](https://img.shields.io/badge/Three.js-000000?logo=threedotjs&logoColor=white)
+
+</div>
+
+---
+
+## ¿Qué es este proyecto?
+
+Es mi carta de presentación como desarrollador: una single-page application que
+muestra quién soy, cómo trabajo y los proyectos reales que he construido —
+sistemas B2B a medida y plataformas B2C. Todo el contenido, el diseño y el
+código son propios.
+
+**Proyectos que presenta:**
+
+| Proyecto | Tipo | Stack |
+| --- | --- | --- |
+| **BahiaR** | Sistema de gestión de embarcaciones (B2B, tipo CRM) | Next.js · Supabase · Tailwind · Resend |
+| **Nobrega Consultores** | Sitio web + panel de administración para un bufete de abogados (B2B) | PHP · MySQL · Apache |
+| **Ryplay** | Catálogo de cuentas de streaming con panel de administración (B2C) | Next.js · React · Supabase · Resend |
+
+## Características
+
+- **Hero 3D interactivo** — grilla de cubos que responde al cursor y artefacto
+  con shader propio (fresnel + scanlines + desplazamiento de vértices).
+- **Fondo de fluido animado** — simulación de fluidos en WebGL detrás del
+  contenido, con colores de la paleta del sitio.
+- **Scroll cinematográfico** — scroll suave con Lenis y animaciones de
+  aparición por sección con Framer Motion.
+- **Carrusel de capturas por proyecto** — crossfade, flechas, puntos y swipe
+  táctil, dentro de un marco tipo ventana retro.
+- **Estética retro-terminal** — scanlines, HUD, tipografía mono (JetBrains
+  Mono) y titulares en Space Grotesk sobre paleta ámbar/fósforo/cyan.
+- **Contenido centralizado** — todos los textos viven en `data/site.ts` y
+  `data/projects.ts`; se edita el contenido sin tocar componentes.
+- **Responsive y accesible** — mobile-first, respeta `prefers-reduced-motion`
+  y tiene fallback CSS cuando no hay WebGL.
+
+## Stack
+
+| Capa | Tecnología |
+| --- | --- |
+| Framework | Next.js 14 (App Router) + React 18 |
+| Lenguaje | TypeScript |
+| Estilos | Tailwind CSS 3 |
+| 3D | Three.js + React Three Fiber + drei |
+| Animación | Framer Motion · GSAP · Lenis (smooth scroll) |
+| Deploy | Vercel |
 
 ## Correr en local
+
 ```bash
-npm install        # solo la primera vez
-npm run dev        # http://localhost:3000
+npm install
+npm run dev     # http://localhost:3000
 ```
 
-## Producción
+Build de producción:
+
 ```bash
-npm run build      # build optimizado
-npm run start      # sirve el build en http://localhost:3000
+npm run build
+npm run start
 ```
+
+Requiere Node.js 18.18+ (recomendado 20+). No necesita variables de entorno.
 
 ## Estructura
+
 ```
-app/            layout, page, estilos globales
+app/            layout, página principal y estilos globales
 components/
-  sections/     las 8 secciones de la página
-  three/        escena 3D + shader + fallback
-  ui/           navbar, footer, smooth scroll, reveal, marquee
-data/           site.ts (textos) · projects.ts (proyectos)
+  sections/     secciones de la página (Hero, About, Work, Process, AI, Contact)
+  three/        escenas 3D: cubos del hero, artefacto con shader, fluido
+  ui/           navbar, footer, carrusel, marquee, reveal, smooth scroll
+data/           site.ts (textos del sitio) · projects.ts (proyectos)
 lib/            helpers y hooks
-public/         capturas e imágenes estáticas
-_legacy/        versión vanilla previa (referencia, no se usa)
+public/         capturas de los proyectos
 ```
 
-## Editar contenido
-Casi todo el texto vive en `data/site.ts` y `data/projects.ts`.
-Ver **`secciones.md`** para el mapa completo de "qué archivo toco para cambiar X".
+## Contacto
 
-## Pendiente de completar
-Datos de proyectos, email/WhatsApp/redes, CV en PDF, envío del formulario e imagen
-Open Graph. Detalle en **`INFORME.md`** (punto 10).
-
-## Deploy (Vercel)
-Proyecto Next.js estándar: importar el repo en Vercel, build command `next build`,
-deploy automático. No requiere variables de entorno para funcionar.
+- **GitHub:** [github.com/soyrick](https://github.com/soyrick)
+- **LinkedIn:** [Ricardo García](https://www.linkedin.com/in/ricardo-garcia-62a257367)
+- **Email:** ricardoenriquegr27@gmail.com

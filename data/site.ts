@@ -2,9 +2,8 @@
    CONTENIDO DEL SITIO  (fuente de verdad del copy)
    ---------------------------------------------------------------------------
    Toda la información visible de la web vive acá. Para cambiar un texto,
-   editás este archivo (ver `secciones.md` para saber qué bloque alimenta cada
-   sección). Lo que todavía no está definido queda como placeholder explícito
-   entre corchetes — NO se inventa información real.
+   editás este archivo. Lo que todavía no está definido queda como placeholder
+   explícito entre corchetes — NO se inventa información real.
    =========================================================================== */
 
 export const SITE = {
@@ -22,7 +21,6 @@ export const SITE = {
     whatsappUrl: "https://wa.me/584121097114",
     github: "https://github.com/soyrick",
     linkedin: "https://www.linkedin.com/in/ricardo-garcia-62a257367",
-    cv: "/Ricardo-Garcia-CV.pdf", // colocar el PDF en /public con ese nombre
   },
 
   /* NAVEGACIÓN */
@@ -36,7 +34,6 @@ export const SITE = {
 
   /* HERO */
   hero: {
-    badge: "Disponible para proyectos · Remoto",
     // El lettering grande se arma con estas tres líneas
     lines: ["Desarrollo web", "y experiencias", "conectadas al futuro"],
     intro:
@@ -44,22 +41,6 @@ export const SITE = {
     ctaPrimary: { label: "Ver proyectos", href: "#work" },
     ctaSecondary: { label: "Contactame", href: "#contact" },
     scrollHint: "Scrolleá para explorar",
-  },
-
-  /* INTRO / OVERVIEW */
-  intro: {
-    eyebrow: "El proyecto",
-    statement:
-      "Transformo ideas en experiencias web reales, eficientes y bien estructuradas. De la interfaz al deploy, con código limpio y criterio técnico.",
-    detail:
-      "Trabajo con Next.js, TypeScript, Tailwind, Supabase, APIs e inteligencia artificial. Me interesa crear productos digitales, automatizaciones, integraciones y experiencias web que se sientan vivas.",
-  },
-
-  /* MI STACK (intro breve, debajo de "Sobre mí") */
-  miStack: {
-    title: "Mi Stack",
-    description:
-      "Construyo con Next.js, TypeScript, React y Tailwind en el frontend; Supabase y APIs en el backend; y sumo herramientas de IA como Claude y OpenCode para acelerar el proceso. Deploy en Vercel.",
   },
 
   /* SOBRE MÍ */

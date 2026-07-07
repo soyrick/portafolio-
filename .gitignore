@@ -21,5 +21,6 @@ Thumbs.db
 *.tsbuildinfo
 next-env.d.ts
 
-# legacy (versión vanilla previa, conservada como referencia)
-/_legacy
+# local tooling
+/.atl
+/.claude
