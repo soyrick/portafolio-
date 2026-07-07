@@ -32,18 +32,20 @@ export default function Contact() {
           <ul className="mx-auto mt-12 max-w-xl divide-y divide-white/10 border-y border-white/10 text-left">
             {channels.map((c) => {
               const placeholder = isPlaceholder(c.value) || !c.href;
+              // URLs sin protocolo/www para que el valor sea corto y legible
+              const display = c.value.replace(/^https?:\/\/(www\.)?/, "");
               const content = (
-                <div className="flex items-center justify-between py-4">
+                <div className="flex flex-col items-start gap-1.5 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
                   <span className="font-mono text-xs uppercase tracking-widest text-muted">
                     {c.label}
                   </span>
                   <span
                     className={cn(
-                      "font-mono text-sm",
+                      "break-all font-mono text-sm sm:text-right",
                       placeholder ? "text-muted/50 italic" : "text-bone"
                     )}
                   >
-                    {c.value}
+                    {display}
                     {!placeholder && <span className="ml-2 text-amber">↗</span>}
                   </span>
                 </div>
