@@ -96,6 +96,6 @@ public/         capturas de los proyectos
 
 ## Contacto
 
-- **GitHub:** [github.com/soyrick](https://github.com/soyrick)
+
 - **LinkedIn:** [Ricardo García](https://www.linkedin.com/in/ricardo-garcia-62a257367)
 - **Email:** ricardoenriquegr27@gmail.com
