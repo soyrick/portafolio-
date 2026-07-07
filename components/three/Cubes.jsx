@@ -114,7 +114,6 @@ const Cubes = ({
 
   const onTouchMove = useCallback(
     (e) => {
-      e.preventDefault();
       userActiveRef.current = true;
       if (idleTimerRef.current) clearTimeout(idleTimerRef.current);
 
@@ -245,7 +244,7 @@ const Cubes = ({
     el.addEventListener("pointerleave", resetAll);
     el.addEventListener("click", onClick);
 
-    el.addEventListener("touchmove", onTouchMove, { passive: false });
+    el.addEventListener("touchmove", onTouchMove, { passive: true });
     el.addEventListener("touchstart", onTouchStart, { passive: true });
     el.addEventListener("touchend", onTouchEnd, { passive: true });
 

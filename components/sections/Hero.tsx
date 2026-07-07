@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="scanlines relative flex min-h-[100svh] items-center overflow-hidden px-5 pt-28 pb-20 sm:px-8"
+      className="scanlines relative flex min-h-[100svh] items-center overflow-hidden px-5 pt-28 pb-32 sm:px-8 sm:pb-20"
     >
       {/* Fondo del hero: grilla de cubos 3D interactiva */}
       <div className="hero-cubes-layer absolute inset-0 z-0 opacity-80" aria-hidden>
