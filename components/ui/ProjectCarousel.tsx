@@ -11,11 +11,9 @@ import { cn } from "@/lib/utils";
  * - `object-contain`: la captura se ve completa y centrada, sin recorte/zoom.
  */
 export default function ProjectCarousel({
-  id,
   title,
   screenshots,
 }: {
-  id: string;
   title: string;
   screenshots: string[];
 }) {
@@ -42,7 +40,6 @@ export default function ProjectCarousel({
         <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
         <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
         <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
-        <span className="ml-3 font-mono text-[11px] text-muted">{id}.app</span>
         {total > 1 && (
           <span className="ml-auto font-mono text-[11px] text-muted">
             {index + 1}/{total}

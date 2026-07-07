@@ -35,7 +35,7 @@ export default function Footer() {
           © {SITE.year} {SITE.name} · {SITE.location}
         </span>
         <span className="font-mono">
-          Built with Next.js · Three.js · Tailwind — diseño propio
+          Built with Next.js · Tailwind — diseño propio
         </span>
       </div>
     </footer>

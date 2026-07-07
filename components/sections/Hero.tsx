@@ -27,8 +27,7 @@ export default function Hero() {
 
       {/* HUD: esquinas tipo interfaz (solo desktop) */}
       <div className="pointer-events-none absolute left-5 top-24 z-10 hidden font-mono text-[11px] uppercase tracking-[0.25em] text-muted lg:block">
-        <p>LAT // {SITE.location}</p>
-        <p className="mt-1 text-phosphor">● {SITE.availabilityTag}</p>
+        <p className="text-phosphor">● {SITE.availabilityTag}</p>
       </div>
       <div className="pointer-events-none absolute right-5 top-24 z-10 hidden text-right font-mono text-[11px] uppercase tracking-[0.25em] text-muted lg:block">
         <p>{SITE.role}</p>

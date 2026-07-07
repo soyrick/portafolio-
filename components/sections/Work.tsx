@@ -8,11 +8,8 @@ export default function Work() {
     <section id="work" className="relative px-5 py-20 sm:px-8 sm:py-28">
       <div className="mx-auto max-w-7xl">
         <Reveal>
-          <p className="font-mono text-xs uppercase tracking-[0.3em] text-amber">
-            [ Trabajo seleccionado ]
-          </p>
-          <h2 className="mt-4 text-balance text-4xl font-light tracking-tight sm:text-6xl">
-            Proyectos
+          <h2 className="text-balance text-4xl font-light tracking-tight sm:text-6xl">
+            Proyectos Principales
           </h2>
         </Reveal>
 
@@ -30,7 +27,6 @@ export default function Work() {
                 {/* Carrusel de capturas */}
                 <div className="[direction:ltr]">
                   <ProjectCarousel
-                    id={project.id}
                     title={project.title}
                     screenshots={project.screenshots}
                   />

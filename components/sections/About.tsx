@@ -22,12 +22,6 @@ export default function About() {
               {SITE.about.paragraph}
             </p>
           </Reveal>
-          <Reveal delay={0.15}>
-            <div className="mt-8 flex items-start gap-3 rounded-xl border border-phosphor/20 bg-phosphor/5 p-5">
-              <span className="mt-0.5 text-phosphor">●</span>
-              <p className="text-sm text-bone">{SITE.about.note}</p>
-            </div>
-          </Reveal>
         </div>
 
         {/* Bullets como "specs" */}

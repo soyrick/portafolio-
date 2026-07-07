@@ -17,11 +17,11 @@ export const SITE = {
 
   /* CONTACTO — completar cuando estén los datos definitivos */
   contact: {
-    email: "[Correo de contacto]",
-    whatsapp: "[WhatsApp]",
-    whatsappUrl: "", // ej: https://wa.me/58XXXXXXXXXX  (vacío => botón deshabilitado)
-    github: "[URL de GitHub]",
-    linkedin: "[URL de LinkedIn]",
+    email: "ricardoenriquegr27@gmail.com",
+    whatsapp: "+58 412 1097114",
+    whatsappUrl: "https://wa.me/584121097114",
+    github: "https://github.com/soyrick",
+    linkedin: "https://www.linkedin.com/in/ricardo-garcia-62a257367",
     cv: "/Ricardo-Garcia-CV.pdf", // colocar el PDF en /public con ese nombre
   },
 
@@ -69,15 +69,15 @@ export const SITE = {
     paragraph:
       "Soy Ricardo García, desarrollador Full Stack JR enfocado en construir soluciones web modernas, interfaces atractivas y productos digitales funcionales — con la IA como aliado del proceso.",
     bullets: [
-      "Creo soluciones web modernas, de la interfaz al deploy.",
+      "Creo soluciones web modernas.",
       "Uso IA como apoyo estratégico para acelerar y mejorar el trabajo.",
-      "Tengo proyectos propios publicados en GitHub.",
-      "Me mueven los productos digitales, las automatizaciones y las integraciones.",
+      "Desarrollo bajo una dinamica de trabajo en fases organizada y eficiente para entregar soluciones claras y mantenibles.",
+      
     ],
-    note: "Disponibilidad inmediata para trabajar de forma remota. Abierto a roles donde pueda aportar y seguir creciendo.",
+    
   },
 
-  /* PROCESO */
+  /* COMO TRABAJO */
   process: {
     eyebrow: "Cómo trabajo",
     title: "De la idea al deploy, sin vueltas innecesarias",
@@ -89,7 +89,7 @@ export const SITE = {
       { t: "Desarrollo la interfaz", d: "Construyo interfaces limpias, responsive y funcionales." },
       { t: "Integro servicios", d: "Conecto APIs, bases de datos y servicios externos." },
       { t: "Uso IA como apoyo", d: "Acelero análisis, prototipado y revisión de código con criterio." },
-      { t: "Itero y despliego", d: "Pruebo, ajusto y publico. Mejora continua." },
+      { t: "Itero y despliego", d: "Pruebo el producto, ajusto y publico, nada deploya sin estar 100% listo." },
     ],
   },
 
@@ -98,14 +98,14 @@ export const SITE = {
     eyebrow: "Capacidades",
     title: "Stack tecnológico",
     intro:
-      "Tecnologías que uso para construir productos web modernos, integrar servicios y sumar IA al flujo de trabajo.",
+      "Tecnologías que uso para construir productos web modernos e integrar servicios.",
     categories: [
       { name: "Frontend", items: ["Next.js", "TypeScript", "Tailwind CSS", "React"] },
       { name: "Backend / Datos", items: ["Supabase", "SQL", "APIs REST"] },
-      { name: "Integraciones", items: ["APIs externas", "Webhooks", "Servicios cloud"] },
+      { name: "Integraciones", items: ["APIs externas", "Webhooks", ] },
       { name: "Deploy & Workflow", items: ["Vercel", "GitHub", "CI básico"] },
       { name: "IA aplicada", items: ["Claude", "OpenCode", "Prompting técnico"] },
-      { name: "Automatización", items: ["Flujos", "Bots", "Procesos digitales"] },
+      { name: "Automatización", items: ["Flujos", "Procesos digitales"] },
     ],
   },
 
@@ -127,24 +127,12 @@ export const SITE = {
     note: "La IA es una herramienta de apoyo: el diseño, las decisiones y la calidad final son responsabilidad humana.",
   },
 
-  /* CTA FINAL */
-  cta: {
-    eyebrow: "Trabajemos juntos",
-    title: "¿Tenés un proyecto o una vacante?",
-    subtitle:
-      "Disponibilidad inmediata para roles remotos de Frontend, Full Stack, AI o Automation. Hablemos.",
-    primary: { label: "Escribime", href: "#contact" },
-    roles: ["Frontend Developer", "Full Stack Developer", "AI Developer", "Automation Developer"],
-  },
-
   /* CONTACTO */
   contactSection: {
-    eyebrow: "Contacto",
-    title: "Hablemos",
+    eyebrow: "Trabajemos juntos",
+    title: "Me gustaria formar parte de tu equipo",
     subtitle:
-      "Contame qué necesitás y te respondo a la brevedad. También podés escribirme directo por los canales de abajo.",
-    formNote:
-      "El formulario es una maqueta visual: conectar a Formspree u otro servicio para que envíe correos. (Ver placeholder en data/site.ts)",
+      "Disponibilidad inmediata para roles remotos. Escribime directo por cualquiera de estos canales y te respondo a la brevedad.",
   },
 };
 
