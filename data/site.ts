@@ -21,6 +21,7 @@ export const SITE = {
     whatsappUrl: "https://wa.me/584121097114",
     github: "https://github.com/soyrick",
     linkedin: "https://www.linkedin.com/in/ricardo-garcia-62a257367",
+    cv: "/CV_Ricardo_dev.pdf",
   },
 
   /* NAVEGACIÓN */

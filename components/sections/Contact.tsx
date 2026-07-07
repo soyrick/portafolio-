@@ -8,6 +8,7 @@ export default function Contact() {
     { label: "WhatsApp", value: SITE.contact.whatsapp, href: SITE.contact.whatsappUrl },
     { label: "GitHub", value: SITE.contact.github, href: isPlaceholder(SITE.contact.github) ? "" : SITE.contact.github },
     { label: "LinkedIn", value: SITE.contact.linkedin, href: isPlaceholder(SITE.contact.linkedin) ? "" : SITE.contact.linkedin },
+    { label: "CV", value: "Ver PDF", href: SITE.contact.cv },
   ];
 
   return (
@@ -54,7 +55,7 @@ export default function Contact() {
                   ) : (
                     <a
                       href={c.href}
-                      target={c.href.startsWith("http") ? "_blank" : undefined}
+                      target={c.href.startsWith("http") || c.href.endsWith(".pdf") ? "_blank" : undefined}
                       rel="noreferrer"
                       className="cursor-target block transition-colors hover:text-amber"
                     >
